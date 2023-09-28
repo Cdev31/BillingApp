@@ -1,4 +1,11 @@
+import { useForm } from "../hooks/useForm"
+
 export const MovingForm = ()=>{
+    const { onInputChange } = useForm([], 5)
+
+    const onCalculatePrice = ()=>{
+        
+    }
 
     return (
         <form className="flex flex-col gap-5 mt-5 p-2">
@@ -8,14 +15,16 @@ export const MovingForm = ()=>{
                 <label className="font-bold self-center text-david-theme/90" >Horas laboradas:</label>
                 <input
                 min={0}
-                name="Client"
+                onBlur={onInputChange}
+                name="Horas laboradas"
                 className="text-center font-medium self-center w-14 text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="number"/>
             </section>
             <section className="flex flex-col gap-2">
                 <label className="font-bold self-center text-david-theme/90" >Precio unitario:</label>
                 <input
                 min={0}
-                name="Client"
+                onBlur={onInputChange}
+                name="Precio unitario"
                 className="text-center font-medium self-center w-14 text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="number"/>
             </section>
            </div>
@@ -23,7 +32,8 @@ export const MovingForm = ()=>{
                 <label className="font-bold self-center text-david-theme/90" >Descuento:</label>
                 <input
                 min={0}
-                name="Client"
+                onBlur={onInputChange}
+                name="Descuento"
                 className="text-center font-medium self-center w-14 text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="number"/>
             </section>
             <div className="self-center flex flex-row gap-5">
@@ -31,14 +41,16 @@ export const MovingForm = ()=>{
                 <label className="font-bold self-center text-david-theme/90" >QTY:</label>
                 <input
                 min={0}
-                name="Client"
+                onBlur={onInputChange}
+                name="QTY"
                 className="text-center font-medium self-center w-[5rem] text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="number"/>
             </section>
             <section className="flex flex-col gap-2">
                 <label className="font-bold self-center text-david-theme/90" >Total:</label>
                 <input
                 min={0}
-                name="Client"
+                onBlur={onInputChange}
+                name="Total"
                 className="text-center font-medium self-center w-[5rem] text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="number" readOnly/>
             </section>
            </div>

@@ -4,11 +4,13 @@ import { billingContext } from "../context/BillingContext"
 
 
 export const Layout = ({children})=>{
-   const { page, setNextPage } = useContext( billingContext )
+   const { page, setNextPage, activeButton} = useContext( billingContext )
 
    const onNextPage = ()=>{
       const nextPage = page + 1
-      setNextPage(nextPage)
+      if( activeButton === true ){
+        setNextPage(nextPage)
+      }
    }
 
    const onBeforePage = ()=>{
@@ -16,10 +18,11 @@ export const Layout = ({children})=>{
      if(nextPage === 0)return
      setNextPage(nextPage)
   }
+  
     return (
         <section className="flex flex-col w-full justify-center">
           <figure className="bg-david-theme/60 w-full h-[9rem] flex justify-center">
-            <img className="w-[10rem] h-[9.5rem]" src="public/assets/Davids_logo.png"/>
+            <img className="w-[10rem] h-[9.5rem]" src="public/Davids_logo.png"/>
           </figure>
           {children}
           <div className="self-center flex flex-row gap-2">

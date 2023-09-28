@@ -1,6 +1,9 @@
+import { useForm } from "../hooks/useForm"
 
 
 export const AddressForm = ()=>{
+    const { onInputChange } = useForm([], 4)
+    
     const addressInformation = ['Desde', 'Hasta']
     return (
         <form className="flex flex-col gap-5 mt-5">
@@ -13,13 +16,15 @@ export const AddressForm = ()=>{
                     <section className="flex flex-col self-center">
                             <label className="font-bold text-david-theme/90 self-center">Ciudad:</label>
                             <input
-                            name="Client"
+                            onBlur={onInputChange}
+                            name="Ciudad"
                             className="font-medium w-48 text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="text"/>
                         </section>
                         <section className="flex flex-col self-center">
                             <label className="font-bold text-david-theme/90 self-center">Direccion:</label>
                             <input
-                            name="Client"
+                            onBlur={onInputChange}
+                            name="Direccion"
                             className="font-medium w-48 text-black/80 border-2 rounded-lg p-1 border-david-theme/70 pl-2 focus:outline-blue-500" type="text"/>
                         </section>
                     </div> 
