@@ -2,15 +2,22 @@
 
 import { View, Text } from '@react-pdf/renderer'
 
-export const InformationPDF =({ qty = [] })=>{
-   
+export const InformationPDF =({dataMoving})=>{
+   const qty = [1,dataMoving.extraHours]
 
     return (
-        <View style={{ display: 'flex', flexDirection: 'row',  alignSelf: 'center', margin: '50px' }}>
+        <View style={{ display: 'flex', flexDirection: 'column', marginLeft: '50px', marginRight:'50px', marginTop:'40px', marginBottom: '45px' }}>
+            <Text style={{  
+            fontSize: '18px',
+            fontWeight:'extrabold',
+            borderBottomWidth: '1px', borderColor: 'black', marginBottom: '5px' }} >Moving Information</Text>
+           
             <View style={{
                 display: 'flex',
                 flexDirection: 'row',
+                alignContent: 'center'
             }}>
+        
                 <View style={{
                     display: 'flex',
                     gap: '5px',
@@ -20,14 +27,12 @@ export const InformationPDF =({ qty = [] })=>{
                 }}>
                     <Text style={{
                         padding:'4px',
-                        borderColor: 'black',
-                        borderBottomWidth: '2px',
-                        opacity: 0.9
-                    }}>Description:</Text>
+                        fontSize:'16px'
+                    }}>Description</Text>
                     <Text style={{
                         padding: '4px',
                         fontSize: '14px'
-                    }}>Labor 5 hours at $55/hr</Text>
+                    }}>{dataMoving.description}</Text>
                 </View>
                 <View style={{
                     display: 'flex',
@@ -36,13 +41,12 @@ export const InformationPDF =({ qty = [] })=>{
                 }}>
                     <Text style={{
                         padding:'4px',
-                        borderColor: 'black',
-                        borderBottomWidth: '2px',
-                        opacity: 0.9
+                        fontSize:'16px'
                     }}> QTY </Text>
                     {
-                        qty.map((qty)=>(
+                        qty.map((qty,i)=>(
                             <Text
+                            key={i}
                             style={{
                                 padding: '4px',
                                 alignSelf: 'center'
@@ -51,6 +55,7 @@ export const InformationPDF =({ qty = [] })=>{
                         ))
                     }
                 </View>
+
                 <View style={{
                     display: 'flex',
                     padding: '4px',
@@ -58,19 +63,17 @@ export const InformationPDF =({ qty = [] })=>{
                 }}>
                     <Text style={{
                         padding:'4px',
-                        borderColor: 'black',
-                        borderBottomWidth: '2px',
-                        opacity: 0.9
+                        fontSize:'16px'
                     }}>Unit Price</Text>
 
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>150.00</Text>
+                    }}>{dataMoving.basePrice}</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>55.00</Text>
+                    }}>{dataMoving.extraPrice}</Text>
                 </View>
 
                 <View style={{
@@ -80,26 +83,21 @@ export const InformationPDF =({ qty = [] })=>{
                 }}>
                     <Text style={{
                         padding:'4px',
-                        borderColor: 'black',
-                        borderBottomWidth: '2px',
-                        opacity: 0.9
+                        fontSize:'16px'
                     }}>Amount</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>150.00</Text>
+                    }}>{dataMoving.basePrice}</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>275.00</Text>
+                    }}>{dataMoving.extraPrice * dataMoving.extraHours}</Text>
+                    <Text style={{
+                    fontSize: '16px',
+                    marginTop: '5px'
+                    }}> Total: {`$${dataMoving.total}`}</Text>
                 </View>
-            </View>
-            <View style={{
-                alignSelf: 'flex-end'
-            }}>
-                <Text style={{
-                    fontSize: '15px'
-                }}> Total: $425.00</Text>
             </View>
         </View>
     )

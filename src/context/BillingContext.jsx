@@ -8,12 +8,14 @@ export const BillingProvider = ({ children })=>{
     const [data, setData] = useState({})
     const [ nextPage, setNextPage ] = useState(1)
     const [activeButton, setActiveButton ] = useState(true)
+    const [viewPDF,setViewPDF] = useState(false)
 
     return(
         <billingContext.Provider value={{
             page: nextPage, setNextPage, 
             activeButton, setActiveButton,
-            data, setData
+            data, setData,
+            setViewPDF, viewPDF
         }}>
             { children }
         </billingContext.Provider>

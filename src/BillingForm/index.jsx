@@ -3,6 +3,7 @@ import { AddressForm } from "./AddressForm"
 import { MovingForm } from "./MovingForm"
 import { UserInfoForm } from "./UserInfoForm"
 import { billingContext } from "../context/BillingContext"
+import { OptionButtonPdf } from "./OptionButtonPdf"
 
 
 
@@ -23,7 +24,11 @@ export const BillingForm = ()=>{
             return (
                 <MovingForm/>
             )
-            }
+        }else if( page === 4){
+            return (
+                <OptionButtonPdf/>
+            )
+        }
     }
 
     return (

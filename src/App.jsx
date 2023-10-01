@@ -1,25 +1,19 @@
 import { PDFViewer } from '@react-pdf/renderer'
-import { useState } from 'react'
+import { useContext } from 'react'
 import { BillingPDF } from './BillingPdf/BillingPDF'
-import { UserInfoForm } from './BillingForm/UserInfoForm'
-import { AddressBilling } from './BillingPdf/AddressBilling'
-import { AddressForm } from './BillingForm/AddressForm'
-import { MovingForm } from './BillingForm/MovingForm'
 import { BillingForm } from './BillingForm'
+import { billingContext } from './context/BillingContext'
 
 
 export const BillingApp = ()=> {
+  const { viewPDF, data  } = useContext(billingContext)
 
-  const [viewPDF,setViewPDF] = useState(false)
-  const [information,setInformation] = useState({})
-  const [qty, setQty] = useState([1,5])
-  
-  const onQty = (num)=>{
-    setQty(num)
+  const dat = {
+    name: 'kalet',
+    surname: 'chavez'
   }
-
   return (
-    <div>
+    <div className='h-[24rem]'>
      {
       viewPDF === false ?  
       <BillingForm />
@@ -28,7 +22,7 @@ export const BillingApp = ()=> {
         width: '100%',
         height: '100vh'
       }}>
-        <BillingPDF qty={qty} data={information}/>
+        <BillingPDF information={data} />
       </PDFViewer>
      }
     
