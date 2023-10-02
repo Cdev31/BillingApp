@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -30,5 +31,5 @@
     "vite": "^4.4.5",
     "vite-plugin-pwa": "^0.16.5"
   },
-  "homepage": "https://Davids-Movers-Services.github.io/BillingApp"
+  "homepage": "htts://github.com/Cdev31/BillingApp"
 }
