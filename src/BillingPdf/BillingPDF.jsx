@@ -1,6 +1,5 @@
 
 import { Document, Page, View, Text, Image } from '@react-pdf/renderer'
-import { PhoneIcon } from '@heroicons/react/24/solid'
 import { InformationPDF } from './InformationPDF'
 import { AddressBilling } from './AddressBilling'
 import { UserBilling } from './UserBilling'
@@ -32,17 +31,16 @@ export const BillingPDF = ({information})=>{
         <Page size="A4">
           <View style={{
             backgroundColor: 'rgb(0 0 255 / 0.8)',
-            display: 'flex',
-            flexDirection: 'row'
+            height: '100px'
           }}>
-            <Image style={{width: '190px', height: '180px',paddingTop: '15px'}} src="/public/Davids_logo.png"/>
+            <Image style={{width: '130px', height: '220px',paddingTop: '15px', marginLeft: '20px'}} src="/public/Davids_logo.png"/>
           </View>
           
 
         <View style={{
           display: 'flex',
           flexDirection: 'column',
-          marginTop: '10px'
+          marginTop: '30px'
         }}>
           <UserBilling
             data={userInformation}
@@ -57,15 +55,15 @@ export const BillingPDF = ({information})=>{
         </View>
 
         <IconBilling/>
-        <View>
+        <View style={{alignSelf: 'center'}}>
            <Text 
-           style={{color: 'black', fontSize: '20px', marginLeft: '155px'}} 
+           style={{color: 'black', fontSize: '20px'}} 
            >Thanks for your preference!!</Text>
            <Text 
-           style={{fontSize:'14px', color: 'black', marginLeft: '190px'}}
+           style={{fontSize:'14px', color: 'black', marginLeft: '30px'}}
            >It was a pleasure to serve you.</Text>
            <Text 
-           style={{fontSize:'14px', color: 'black', marginLeft: '230px'}}
+           style={{fontSize:'14px', color: 'black', marginLeft: '70px'}}
            >Date: {dateNow.toLocaleDateString()}</Text>
         </View>
         </Page>

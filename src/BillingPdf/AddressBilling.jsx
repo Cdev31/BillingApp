@@ -19,6 +19,8 @@ export const AddressBilling = ({ dataFrom, dataTo }) => {
             flexDirection: 'column',
             gap: '5px',
             fontSize: '14px',
+            marginTop: '20px',
+            marginBottom: '30px'
         }}>
             <Text style={{  
             fontSize: '18px',

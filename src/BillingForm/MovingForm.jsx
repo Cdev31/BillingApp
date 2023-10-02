@@ -11,7 +11,7 @@ export const MovingForm = ()=>{
     const [description, setDescription] = useState('')
 
     useEffect(()=>{
-        setActiveButton(true)
+        setActiveButton(false)
     }, [])
 
     const validInput = ()=>{

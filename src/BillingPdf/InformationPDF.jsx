@@ -69,11 +69,11 @@ export const InformationPDF =({dataMoving})=>{
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>{dataMoving.basePrice}</Text>
+                    }}>{`$${dataMoving.basePrice}`}</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>{dataMoving.extraPrice}</Text>
+                    }}>{`$${dataMoving.extraPrice}`}</Text>
                 </View>
 
                 <View style={{
@@ -83,19 +83,20 @@ export const InformationPDF =({dataMoving})=>{
                 }}>
                     <Text style={{
                         padding:'4px',
-                        fontSize:'16px'
+                        fontSize:'16px',
+                        paddingLeft: '10px'
                     }}>Amount</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>{dataMoving.basePrice}</Text>
+                    }}>{`$${dataMoving.basePrice}`}</Text>
                     <Text style={{
                         alignSelf: 'center',
                         padding: '4px'
-                    }}>{dataMoving.extraPrice * dataMoving.extraHours}</Text>
+                    }}>{`$${dataMoving.extraPrice * dataMoving.extraHours}`}</Text>
                     <Text style={{
                     fontSize: '16px',
-                    marginTop: '5px'
+                    marginTop: '10px'
                     }}> Total: {`$${dataMoving.total}`}</Text>
                 </View>
             </View>

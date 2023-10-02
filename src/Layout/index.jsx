@@ -19,7 +19,7 @@ export const Layout = ({children})=>{
      setNextPage(nextPage)
   }
     return (
-        <section className="flex flex-col w-full justify-center">
+        <section className="flex flex-col h-full w-full justify-center">
           <figure className="bg-david-theme/60 w-full h-[9rem] flex justify-center">
             <img className="w-[10rem] h-[9.5rem]" src="public/Davids_logo.png"/>
           </figure>
@@ -42,7 +42,7 @@ export const Layout = ({children})=>{
               Continuar
             </button>
             </div>
-            <footer className="bg-david-theme/60 h-10"></footer>
+            {/* <footer className="bg-david-theme/60 h-10 mt-8"></footer> */}
             </>
            ): <></>
           }

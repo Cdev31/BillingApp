@@ -24,7 +24,7 @@ export const IconBilling = ()=>{
                     gap: '3px',
                     paddingLeft: '2px'
                 }}>
-                    <Image style={{width: '14px', height: '14px'}} src="/public/phone.png"/>
+                    <Image style={{width: '14px', height: '14px'}} src="/public/whatsapp.png"/>
                     <Text  style={{alignSelf: 'flex-end'}}>+1 (346) 755-3216</Text>
                 </View> 
                 <View style={{

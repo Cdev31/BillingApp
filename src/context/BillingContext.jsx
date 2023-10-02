@@ -7,7 +7,7 @@ export const billingContext = createContext()
 export const BillingProvider = ({ children })=>{
     const [data, setData] = useState({})
     const [ nextPage, setNextPage ] = useState(1)
-    const [activeButton, setActiveButton ] = useState(true)
+    const [activeButton, setActiveButton ] = useState(false)
     const [viewPDF,setViewPDF] = useState(false)
 
     return(
